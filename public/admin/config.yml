@@ -1,0 +1,98 @@
+site_url: http://localhost:3000
+# site_url: https://github.com/coverspace/HorrorChronicles_SPA
+logo_url: https://raw.githubusercontent.com/coverspace/HorrorChronicles_SPA/feature/netlify/public/img/myLogo.png
+
+# The search functionally requires loading all collection(s) entries,
+search: true
+
+publish_mode: editorial_workflow
+backend:
+  name: github
+  # name: test-repo # in development mode(!)
+  repo: coverspace/HorrorChronicles_SPA
+  branch: main
+  squash_merges: true
+
+# used together with `npx netlify-cms-proxy-server`. https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
+local_backend: true
+
+media_folder: "/assets/images"
+public_folder: "/public/img"
+
+# Docs: https://www.netlifycms.org/docs/configuration-options/#collections
+collections:
+  - name: "main"
+    # preview_path: "blog/{{year}}/{{month}}/{{slug}}"
+    label: "Kezdőlap"
+    description: The main collection
+    label_singular: "Kezdőlap"
+    folder: "/content/01.main"
+    create: true
+    format: "frontmatter"
+    editor:
+      preview: true
+    fields:
+      - {
+          label: "Created Date",
+          name: "createdAt",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+          time_format: false,
+        }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+      - { label: "Button", name: "button", widget: "string", required: true }
+
+  - name: "main"
+    label: "Elérhetőség"
+    description: The home collection
+    label_singular: "Elérhetőség"
+    folder: "/content/02.home"
+    create: true
+    format: "frontmatter"
+    slug: "{{fields.createdAt}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {
+          label: "Created Date",
+          name: "createdAt",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+          time_format: false,
+        }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  # page - Footer
+  - name: "footer"
+    label: "Footer"
+    description: The footer collection
+    label_singular: "Footer"
+    folder: "/content/_partials/footer"
+    create: true
+    format: "frontmatter"
+    editor:
+      preview: true
+    fields:
+      - {
+          label: "Created Date",
+          name: "createdAt",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+          time_format: false,
+        }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
