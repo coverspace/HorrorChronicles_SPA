@@ -1,2 +1,2 @@
 # HorrorChronicles_SPA
-HorrorChronicles SPA - The game
+HorrorChronicles SPA - Coming Soon page
