@@ -21,12 +21,27 @@
           </div>
 
           <div
-            class="flex flex-col lg:flex-row justify-between items-center uppercase w-full gap-8 font-bold rounded"
+            class="flex flex-col 2xl:flex-row justify-between items-center uppercase w-full gap-8 font-bold rounded"
           >
-            <NuxtImg
+            <!-- <NuxtImg
               :src="doc.image_1"
               class="w-full h-fit border-2 border-red-700"
-            />
+            /> -->
+
+            <div
+              class="relative overflow-hidden w-full h-[415px] border-2 border-red-700"
+            >
+              <iframe
+                class="absolute top-0 right-0 left-0 bottom-0 w-full h-[415px]"
+                src="https://www.youtube.com/embed/McFfO2hGv8Y?si=OvKWBm-PjXuZAHbl"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+
             <NuxtImg
               :src="doc.image_2"
               class="w-full h-fit border-2 border-red-700"
